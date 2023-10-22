@@ -30,7 +30,7 @@ int main(void)
 
     Image logo = LoadImage("./resources/logo/logo-256.png");
     SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    size_t factor = 60;
+    size_t factor = 80;
     InitWindow(factor*16, factor*9, "Musializer");
     SetWindowIcon(logo);
     SetTargetFPS(60);
@@ -39,7 +39,7 @@ int main(void)
 
     plug_init();
     while (!WindowShouldClose()) {
-        if (IsKeyPressed(KEY_R)) {
+        if (IsKeyPressed(KEY_H)) {
             void *state = plug_pre_reload();
             if (!reload_libplug()) return 1;
             plug_post_reload(state);

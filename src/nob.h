@@ -41,6 +41,10 @@
 
 #ifdef _WIN32
 #    define WIN32_LEAN_AND_MEAN
+#    define _WINUSER_
+#    define _WINGDI_
+#    define _IMM_
+#    define _WINCON_
 #    include <windows.h>
 #    include <direct.h>
 #    include <shellapi.h>
@@ -213,6 +217,7 @@ void nob_temp_rewind(size_t checkpoint);
 int is_path1_modified_after_path2(const char *path1, const char *path2);
 bool nob_rename(const char *old_path, const char *new_path);
 int nob_needs_rebuild(const char *output_path, const char **input_paths, size_t input_paths_count);
+int nob_needs_rebuild1(const char *output_path, const char *input_path);
 int nob_file_exists(const char *file_path);
 
 // TODO: add MinGW support for Go Rebuild Urself™ Technology
@@ -924,6 +929,11 @@ int nob_needs_rebuild(const char *output_path, const char **input_paths, size_t 
 
     return 0;
 #endif
+}
+
+int nob_needs_rebuild1(const char *output_path, const char *input_path)
+{
+    return nob_needs_rebuild(output_path, &input_path, 1);
 }
 
 bool nob_rename(const char *old_path, const char *new_path)

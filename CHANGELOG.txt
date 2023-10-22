@@ -1,8 +1,16 @@
 Windows Alpha Release 2
 ----------------------------------------------------------------------
 
-- You can now visualize microphone input. Just press M when the app
-  awaits you to Drag&Drop the file.
+- TODO: fullscreen button
+
+- Added master volume control. It controls the volume during the
+  preview. It does not affect the audio of the final rendered video.
+
+- Added timeline. Now you can jump to any place of the music during
+  the preview.
+
+- Multiple Files Support: all the Drag&Drop-ed files are preserved
+  and you can switch between them.
 
 - Fixed crash on Windows 7 when rendering the video
   https://github.com/tsoding/musializer/pull/14
